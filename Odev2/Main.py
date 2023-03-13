@@ -1,7 +1,9 @@
 ogrenciler = []
 print("Bir Ogrenci Eklemek icin '1', \nOgrencileri Ekrana yazdirmak icin '2', \nOgrenci numarasi ile ogrencileri getirmek icin '3', \nBirden fazla ogrenci silmek icin '4', \n Birden fazla Ogrenci eklemek icin '5', cikmak icin 'q' tusuna basiniz.")
 runApp = True
-def mainMenu():
+#Ana dongu
+def mainMenu(a):
+    
     girdi = input("Lutfen yapmak istediginiz islemi seciniz: ")
     if girdi == "1":
         ogrenciEkle()
@@ -16,7 +18,9 @@ def mainMenu():
     elif girdi == "5":
         multipleAdd()
     elif girdi == "q":
-        runApp = False
+        a = runApp
+        a = False
+        return a
     else:
         print("Lutfen tekrar secim yapiniz")
     
@@ -57,6 +61,6 @@ def multipleAdd():
             break
 
 while runApp:
-    mainMenu()
+    runApp = mainMenu(runApp)
 
 
